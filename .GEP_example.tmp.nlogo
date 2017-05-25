@@ -654,12 +654,6 @@ gp-target-answer is the target function which is the goal for the GEP to find ou
 2, click "gp-episode"
 3, Observe the GEP process by watching "Fitness Plot", or hit "gp-show-all", "gp-showbest" or "select-one" to see code(s) and code tree(s). If the plot line "best" reached and stablized at 1, then there is some codeturtles successfully invented the target function. If the "best", "avg" is far below 1 at long run, you may change the option in  "breed_option" chooser to see if there is some improvement. If still 
 
-
-## CREDITS AND REFERENCES
-
-https://github.com/jihegao/NetLogo_GEP
-
-contact: jihe.gao(at)jiejiaotech.com
 @#$#@#$#@
 default
 true
