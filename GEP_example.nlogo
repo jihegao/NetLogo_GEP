@@ -657,7 +657,7 @@ or
 etc.
 
 
-1, click "setup" button (or type "setup" in command-center then hit ENTER)
+1, click "setup" button (or run "setup" in command-center)
 
 2, click "gp-episode"
 
