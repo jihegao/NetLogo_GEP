@@ -7,8 +7,6 @@
 ; ------------------------------------------------------------------------------------------
 extensions [csv table time]
 
-breed [ Stocks stock ]
-breed [ Investors investor ]
 breed [ genes gene ]
 breed [ codeturtles codeturtle ]
 
@@ -94,7 +92,7 @@ to gp-setup-genes
         set label first ?
         set input_var_list sublist ? 2 (length ? - 1)
         set output_type item 1 ?
-        set odds ifelse-value (is-string? last ?)[ read-from-string last ?][last ?]
+        set odds last ?
         move-to one-of patches with [pycor = min-pycor]
       ]
     ]
@@ -310,7 +308,7 @@ to select-one
 end
 
 to-report closest-codeturtle [x y agent-set]  ; Return closest agent to x, y
- report min-one-of codeturtles [distancexy-nowrap x y]
+ report min-one-of codeturtles [distancexy x y]
 end
 to reset-codeturtles
 
@@ -585,7 +583,7 @@ SWITCH
 137
 move?
 move?
-0
+1
 1
 -1000
 
@@ -642,18 +640,48 @@ You can find details in http://www.gene-expression-programming.com/webpapers/GEP
 
 ## HOW TO USE IT
 
-0, (optional) modify "gp-target-answer" in code tab, which is by default
+0, (optional) modify "gp-target-answer" in code tab.
+gp-target-answer is the target function which is the goal for the GEP to find out. 
+By default, the target function is:
 
 >to-report gp-target-answer
 report ticks * 3
 end
 
-gp-target-answer is the target function which is the goal for the GEP to find out.
+You can try 
+> report 100
+
+or
+> report ticks * 2 + 100
+
+etc.
+
 
 1, click "setup" button (or run "setup" in command-center)
-2, click "gp-episode"
-3, Observe the GEP process by watching "Fitness Plot", or hit "gp-show-all", "gp-showbest" or "select-one" to see code(s) and code tree(s). If the plot line "best" reached and stablized at 1, then there is some codeturtles successfully invented the target function. If the "best", "avg" is far below 1 at long run, you may change the option in  "breed_option" chooser to see if there is some improvement. If still 
 
+2, click "gp-episode"
+
+3, Observe the GEP process by watching "Fitness Plot", or hit "gp-show-all", "gp-showbest" or "select-one" to see code(s) and code tree(s). If the plot line "best" reached and stablized at 1, then there is some codeturtles successfully invented the target function. If the "best", "avg" is far below 1 at long run, you may change the option in  "breed_option" chooser to see if there is some improvement. 
+
+check model-vew.png for instance)
+
+4, to add more code genes, first locate the comments in the code tab:
+>;; These are atom genes of procedures and reporters, that help form the DNA of the codeturtles.
+
+Then add your reporter function. 
+
+Last, add the function name, type, "R"(parameter place holder) in the init-gp-syntaxlist reporter:
+
+>to-report init-gp-syntaxlist
+report [
+>  ["gp_+"      "TYPE_OPERATOR" "R" "R" 10]
+...
+
+## CREDITS AND REFERENCES
+
+https://github.com/jihegao/NetLogo_GEP
+
+contact: jihe.gao(at)jiejiaotech.com
 @#$#@#$#@
 default
 true
