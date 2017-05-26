@@ -657,13 +657,13 @@ or
 etc.
 
 
-1, click "setup" button (or run "setup" in command-center)
+1, click "setup" button (or type "setup" in command-center then hit ENTER)
 
 2, click "gp-episode"
 
 3, Observe the GEP process by watching "Fitness Plot", or hit "gp-show-all", "gp-showbest" or "select-one" to see code(s) and code tree(s). If the plot line "best" reached and stablized at 1, then there is some codeturtles successfully invented the target function. If the "best", "avg" is far below 1 at long run, you may change the option in  "breed_option" chooser to see if there is some improvement. 
 
-![check model-vew.png for instance]("model-view.png")
+(check model-vew.png for instance)
 
 4, to add more code genes, first locate the comments in the code tab:
 >;; These are atom genes of procedures and reporters, that help form the DNA of the codeturtles.
