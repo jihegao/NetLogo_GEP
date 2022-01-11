@@ -52,4 +52,4 @@ report [
 
 https://github.com/jihegao/NetLogo_GEP
 
-contact: jihe.gao(at)jiejiaotech.com
+contact: jihe.gao(at)gmail.com
